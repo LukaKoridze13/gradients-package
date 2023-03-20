@@ -1,11 +1,3 @@
-// Colors
-$blue: #166b8c;
-$orange: #fe7c31;
-$green: #2eeba2;
-$white: #ececec;
-$black: #202020;
-
-// Gradients
 @mixin gradient-text($-direction, $-color1, $-color2) {
   background: -webkit-linear-gradient($-direction, $-color1, $-color2);
   -webkit-background-clip: text;
@@ -40,10 +32,4 @@ $black: #202020;
   background: linear-gradient($-bg-direction, $-bg-color1, $-bg-color2) padding-box, linear-gradient($-border-direction, $-border-color1, $-border-color2) border-box;
   border-radius: $-radius;
   border: $-size solid transparent;
-}
-
-div {
-  width: 100px;
-  height: 100px;
-  @include gradient-border-gradient-background($-bg-direction, $-bg-color1, $-bg-color2, $-border-direction, $-border-color1, $-border-color2, $-size, $-radius)
 }
