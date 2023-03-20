@@ -1,0 +1,49 @@
+// Colors
+$blue: #166b8c;
+$orange: #fe7c31;
+$green: #2eeba2;
+$white: #ececec;
+$black: #202020;
+
+// Gradients
+@mixin gradient-text($-direction, $-color1, $-color2) {
+  background: -webkit-linear-gradient($-direction, $-color1, $-color2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin gradient-text-3colors($-direction, $-color1, $-color2, $-color3) {
+  background: -webkit-linear-gradient($-direction, $-color1, $-color2, $-color3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin gradient-background($-direction, $-color1, $-color2) {
+  background: -webkit-linear-gradient($-direction, $-color1, $-color2);
+}
+
+@mixin gradient-background-3colors($-direction, $-color1, $-color2, $-color3) {
+  background: -webkit-linear-gradient($-direction, $-color1, $-color2, $-color3);
+}
+
+@mixin gradient-border($-bg-color, $-direction, $-color1, $-color2, $-size: 4px, $-radius: 0px) {
+  background: linear-gradient($-bg-color, $-bg-color) padding-box, linear-gradient($-direction, $-color1, $-color2) border-box;
+  border-radius: $-radius;
+  border: $-size solid transparent;
+}
+@mixin gradient-border-3colors($-bg-color, $-direction, $-color1, $-color2, $-color3, $-size: 4px, $-radius: 0px) {
+  background: linear-gradient($-bg-color, $-bg-color) padding-box, linear-gradient($-direction, $-color1, $-color2, $-color3) border-box;
+  border-radius: $-radius;
+  border: $-size solid transparent;
+}
+@mixin gradient-border-gradient-background($-bg-direction, $-bg-color1, $-bg-color2, $-border-direction, $-border-color1, $-border-color2, $-size: 4px, $-radius: 0px) {
+  background: linear-gradient($-bg-direction, $-bg-color1, $-bg-color2) padding-box, linear-gradient($-border-direction, $-border-color1, $-border-color2) border-box;
+  border-radius: $-radius;
+  border: $-size solid transparent;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  @include gradient-border-gradient-background($-bg-direction, $-bg-color1, $-bg-color2, $-border-direction, $-border-color1, $-border-color2, $-size, $-radius)
+}
